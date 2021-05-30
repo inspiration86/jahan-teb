@@ -26,6 +26,7 @@ import { JwPaginationModule } from 'jw-angular-pagination';
 import { SharedComponentsModule } from '../SharedComponents/sharedcomponents.module';
 import { HomeComponent } from './home/home.component';
 import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
+import {CarouselModule} from "ngx-owl-carousel-o";
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
     SharedModule,
     NgImageFullscreenViewModule,
     NgxImageZoomModule,
-    JwPaginationModule
+    JwPaginationModule,
+    CarouselModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

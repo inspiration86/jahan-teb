@@ -22,7 +22,7 @@
               <div class="ml-auto">{{i['Category'][0].title}}</div>
               <div>{{i['SubCategory'][0].title}}</div>
             </div>
-            <div class="title d-flex flex-row"><a [routerLink]="['/home/product-detail',i['_id']]"><h5>{{i['title']}}</h5></a>
+            <div class="title d-flex flex-row"><a [routerLink]="['product-detail',i['_id']]"><h5>{{i['title']}}</h5></a>
               <div class="prices d-flex flex-row">
                 <div class="na" *ngIf="i['discountStatus']===true">{{i['price']|number}}</div>
                 <div *ngIf="i['discountStatus']===true"> {{i['price']-(i['price']*i['Discount'][0].discountPercent)/100|number}}تومان</div>
@@ -30,7 +30,7 @@
                 <!-- <div>تماس بگیرید</div> -->
               </div>
           </div>
-          <a [routerLink]="['/home/product-detail',i['_id']]" class="btn-buy">
+          <a [routerLink]="['product-detail',i['_id']]" class="btn-buy">
             <span>مشاهده جزییات</span>
             <i class="pi pi-angle-left"></i>
           </a>
