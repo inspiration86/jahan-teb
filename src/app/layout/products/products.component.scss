@@ -1027,14 +1027,14 @@ img.image__tag {
   background: #fff;
   text-align: center;
   box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
-  border-radius: 15px;
+  border-radius: 5px;
   position: relative;
   overflow: hidden;
   transition: 0.3s;
 }
 
 .box:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
   z-index: 9999999!important;
 }
@@ -1042,37 +1042,46 @@ img.image__tag {
 img {
   padding: 30px 40px;
 }
-.btn-buy {
-  display: inline-block;
-  padding: 8px 40px 10px 40px;
-  border-radius: 50px;
-  color: #0cb1c0;
-  transition: none;
-  font-size: 14px;
-  font-weight: 400;
-  transition: 0.3s;
-  background: #0cb1c0;
+
+ .btn-buy {
+  margin-top: 50px;
+  line-height: 0;
+  padding: 6px 30px;
+  border-radius: 4px;
+  transition: 0.5s;
   color: #fff;
+  background: #0cb1c0;
+  // box-shadow: 0px 2px 15px rgba(110, 123, 238, 0.4);
 }
 
-.btn-buy:hover {
-  border: 1px solid #0cb1c0;
-  background: #ffffff;
-  font-family: IRANSans_Bold;
-  text-decoration: none;
-  color: #0cb1c0;
+.btn-buy span {
+  font-weight: 400;
+  font-size: 14px;
+  //letter-spacing: 1px;
+  margin-top: -40px;
 }
+ .btn-buy i {
+  margin-right: 8px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+ .btn-buy:hover i {
+  transform: translateX(5px);
+}
+
 
 .box .badges{
   position: absolute;
-  font-size: 13px;
+  font-family: 'IRANSans_Bold';
+  font-size: 12px;
   line-height: 15px;
   top: 18px;
   right:25px;
   padding: 4px 12px;
   background-color: #0cb1c0;
   color: white;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .box .actions-list {
   position: absolute;

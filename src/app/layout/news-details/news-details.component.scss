@@ -61,12 +61,16 @@
   padding: 30px;
   margin-bottom: 60px;
   background-color: #fff;
+
 }
 
 .blog .entry .entry-img {
   max-height: 440px;
+  max-width:100%;
   margin: -30px -30px 20px -30px;
   overflow: hidden;
+  
+ 
 }
 
 .blog .entry .entry-title {

@@ -169,8 +169,11 @@
                 </div>
               </div>
 
-              <button pButton label="button" icon="pi pi-angle-left" iconPos="left" label="مشاهده" class="btn-buy" (click)="goDetail(products[item.id]['_id'])"></button>
-
+              <!-- <button pButton label="button" icon="pi pi-angle-left" iconPos="left" label="مشاهده" class="btn-buy" (click)="goDetail(products[item.id]['_id'])"></button> -->
+              <a (click)="goDetail(products[item.id]['_id'])" class="btn-buy">
+                <span>مشاهده</span>
+                <i class="pi pi-angle-left"></i>
+              </a>
             </div>
           </div>
       </div>
