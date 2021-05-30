@@ -107,7 +107,7 @@ export class ProductDetailsComponent implements OnInit {
     this.service.getProduct(this.productID).subscribe((response) => {
       if (response.success === true) {
         this.product = response.data[0];
-
+        console.log(response)
         this.product.Comment.forEach((element) => {
           if (element.active) {
             this.commentsCount++;

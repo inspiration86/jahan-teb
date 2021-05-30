@@ -115,12 +115,12 @@ export class ProductsComponent implements OnInit {
   }
 
   goDetail(id: any): void {
-    this.router.navigate(['/home/product-detail/' + id]);
+    this.router.navigate(['/product-detail/' + id]);
   }
 
   goProduct(categoryId: any, subCategoryId: any): any {
     this.router.navigateByUrl(
-      '/home/products/' + categoryId + '/' + subCategoryId
+      '/products/' + categoryId + '/' + subCategoryId
     );
   }
 

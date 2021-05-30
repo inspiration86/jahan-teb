@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit {
   }
   goProduct(categoryId: any, subCategoryId: any): any {
     this.router.navigateByUrl(
-      '/home/products/' + categoryId + '/' + subCategoryId
+      '/products/' + categoryId + '/' + subCategoryId
     );
   }
   ngOnInit(): void {
@@ -92,22 +92,22 @@ export class HeaderComponent implements OnInit {
       {
         label: 'سوالات متداول',
         icon: 'pi pi-fw pi-question-circle',
-        command: (event) => this.route.navigate(['/home/faq']),
+        command: (event) => this.route.navigate(['/faq']),
       },
       {
         label: 'اخبار',
         icon: 'pi pi-fw pi-tags',
-        command: (event) => this.route.navigate(['/home/news']),
+        command: (event) => this.route.navigate(['/news']),
       },
       {
         label: 'درباره ما',
         icon: 'pi pi-fw pi-info-circle',
-        command: (event) => this.route.navigate(['/home/about']),
+        command: (event) => this.route.navigate(['/about']),
       },
       {
         label: 'تماس با ما',
         icon: 'pi pi-fw pi-phone',
-        command: (event) => this.route.navigate(['/home/contact']),
+        command: (event) => this.route.navigate(['/contact']),
       },
     ];
 

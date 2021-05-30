@@ -7,11 +7,6 @@ import {UserGuard} from './Auth/Guard/user.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
     loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule)
   },
   {
@@ -32,7 +27,7 @@ const routes: Routes = [
 
 @NgModule({
   // imports: [RouterModule.forRoot(routes)],
-  imports: [RouterModule.forRoot(routes, { useHash: true, initialNavigation: 'enabled', scrollPositionRestoration: 'enabled' })],
+  imports: [RouterModule.forRoot(routes, { initialNavigation: 'enabled', scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
