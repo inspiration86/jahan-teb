@@ -1,11 +1,11 @@
-import { LayoutService } from './../../layout/layout.service';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {LayoutService} from './../../layout/layout.service';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import * as $ from 'jquery';
-import { Router } from '@angular/router';
-import { MenuItem } from 'primeng/api';
+import {Router} from '@angular/router';
+import {MenuItem} from 'primeng/api';
 import set = Reflect.set;
-import { LocalStorageService } from '../../Auth/localStorageLogin/local-storage.service';
-import { NgxSpinnerService } from 'ngx-spinner';
+import {LocalStorageService} from '../../Auth/localStorageLogin/local-storage.service';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +18,9 @@ export class HeaderComponent implements OnInit {
   categories: any[] = [];
   items: MenuItem[];
   mobileMenuCategories: MenuItem[] = [];
+  pathCatalog: any;
   visible = true;
+
   constructor(
     private route: Router,
     private service: LayoutService,
@@ -32,14 +34,16 @@ export class HeaderComponent implements OnInit {
     this.displayMobileMenu = true;
 
   }
+
   goProduct(categoryId: any, subCategoryId: any): any {
     this.router.navigateByUrl(
       '/products/' + categoryId + '/' + subCategoryId
     );
   }
+
   ngOnInit(): void {
     this.spinner.show();
-
+    this.getCatalog();
     this.service.getAllCategory().subscribe((response) => {
       if (response.success === true) {
         this.categories = response.data;
@@ -99,6 +103,11 @@ export class HeaderComponent implements OnInit {
         command: (event) => this.route.navigate(['/news']),
       },
       {
+        label: 'کاتالوگ',
+        icon: 'pi pi-fw pi-image',
+        command: (event) =>{ document.location.href=this.pathCatalog;},
+      },
+      {
         label: 'درباره ما',
         icon: 'pi pi-fw pi-info-circle',
         command: (event) => this.route.navigate(['/about']),
@@ -144,6 +153,7 @@ export class HeaderComponent implements OnInit {
       myFunction();
     };
   }
+
   goPanel() {
     if (this.localStorage.getCurrentUser() === true) {
       this.router.navigate(['user/panel']);
@@ -152,13 +162,24 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  openProductsMenu(): void{
+  openProductsMenu(): void {
     this.productMenu.nativeElement.classList.add('show');
   }
-  closeProductsMenu(): void{
+
+  closeProductsMenu(): void {
     this.productMenu.nativeElement.classList.remove('show');
   }
-  toggleProductsMenu(): void{
+
+  toggleProductsMenu(): void {
     this.productMenu.nativeElement.classList.toggle('show');
+  }
+
+  getCatalog() {
+    this.service.getAllCatalog().subscribe((response) => {
+      if (response['success'] === true) {
+        let result = response['data'][0];
+        this.pathCatalog = result.path;
+      }
+    })
   }
 }
