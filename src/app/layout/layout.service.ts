@@ -91,5 +91,7 @@ export class LayoutService {
   advanceSearchProduct(data: any): any {
     return this.http.post('http://api.jahantebkhoram.ir/api/v1/user/advanceSearchProduct', data);
   }
-
+  getAllCatalog(): any {
+    return this.http.get('http://api.jahantebkhoram.ir/api/v1/user/getCatalog');
+  }
 }
