@@ -27,6 +27,8 @@ import { SharedComponentsModule } from '../SharedComponents/sharedcomponents.mod
 import { HomeComponent } from './home/home.component';
 import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
 import {CarouselModule} from "ngx-owl-carousel-o";
+import {GalleriaModule} from "primeng/galleria";
+import {TabViewModule} from "primeng/tabview";
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import {CarouselModule} from "ngx-owl-carousel-o";
     NgImageFullscreenViewModule,
     NgxImageZoomModule,
     JwPaginationModule,
-    CarouselModule
+    CarouselModule,
+    GalleriaModule,
+    TabViewModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

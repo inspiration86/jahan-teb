@@ -36,7 +36,7 @@ export class ProfileComponent implements OnInit {
     postalCode: '',
     image: '',
     birthDate: '',
-
+     email:''
   };
   changePassword = {
     password: '',
@@ -103,6 +103,7 @@ export class ProfileComponent implements OnInit {
       city: new FormControl('', Validators.required),
       postalCode: new FormControl('', Validators.required),
       address: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required,Validators.email]),
       image: new FormControl(''),
       birthDate: new FormControl(''),
 
@@ -279,14 +280,13 @@ export class ProfileComponent implements OnInit {
       this.user.id = this.localStorage.userJson['id'];
       this.userService.getUser(this.user.id).subscribe((response) => {
         if (response['success'] === true) {
-          console.log(response);
           this.user.fullName = response['data']['fullName'];
           this.user.mobile = response['data']['mobile'];
           this.user.phone = response['data']['phone'];
           this.user.state = response['data']['state'];
           this.user.city = response['data']['city'];
           this.user.country = response['data']['country'];
-
+          this.user.email = response['data']['email'];
           this.user.nationalCode = response['data']['nationalCode'];
           this.user.postalCode = response['data']['postalCode'];
           this.user.address = response['data']['address'];

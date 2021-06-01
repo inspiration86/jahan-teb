@@ -30,7 +30,6 @@ export class HeaderComponent implements OnInit {
 
   showMobileMenu(): void {
     this.displayMobileMenu = true;
-    console.log(this.displayMobileMenu);
 
   }
   goProduct(categoryId: any, subCategoryId: any): any {

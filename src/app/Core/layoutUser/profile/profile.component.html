@@ -122,7 +122,33 @@
 
               </div>
             </div>
+            <div class="p-field p-grid">
+              <label for="phone" class="p-col-12 p-mb-2 p-md-3 p-mb-md-0 text-right">  ایمیل:</label>
+              <div class="p-col-12 p-md-9">
+                <input id="email" type="text" pInputText [(ngModel)]="user.email" formControlName="email">
+                <ul
+                  class="mt-1 text-right list-inline"
+                  *ngFor="let error of errorMessages.email"
+                >
+                  <li
+                    class="
+                          font-small
+                          text-danger
+                          font-title-bold
+                          list-inline-item
+                        "
+                    *ngIf="
+                          formGroup.get('email').hasError(error.type) &&
+                          (formGroup.get('email').dirty ||
+                            formGroup.get('email').touched)
+                        "
+                  >
+                    {{ error.message }}
+                  </li>
+                </ul>
 
+              </div>
+            </div>
           </div>
         </div>
       </p-panel>
