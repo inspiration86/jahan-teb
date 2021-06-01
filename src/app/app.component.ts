@@ -10,11 +10,11 @@ export class AppComponent {
   title = 'jahanteb-app';
   constructor(private spinner: NgxSpinnerService) {}
   ngOnInit() {
-    this.spinner.show();
+    this.spinner.hide().then(r =>console.log(r) );
 
     setTimeout(() => {
       /** spinner ends after 3 seconds */
-      this.spinner.hide();
-    }, 8000);
+      // this.spinner.hide().then(r =>console.log(r) );
+    }, 1000);
   }
 }

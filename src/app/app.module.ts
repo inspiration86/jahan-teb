@@ -30,6 +30,7 @@ import { CommonModule } from '@angular/common';
     CarouselModule,
     NgxSpinnerModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

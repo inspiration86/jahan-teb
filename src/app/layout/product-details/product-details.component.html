@@ -129,25 +129,25 @@
                 formControlName="count"
               >
               </p-inputNumber>
-              <ul
-                class="mt-1 text-right list-inline"
-                *ngFor="let error of errorMessages.count"
-              >
-                <li
-                  class="
-                    font-small
-                    text-danger
-                    font-title-bold
-                    list-inline-item
-                  "
-                  *ngIf="
-                    form.get('count').hasError(error.type) &&
-                    (form.get('count').dirty || form.get('count').touched)
-                  "
-                >
-                  {{ error.message }}
-                </li>
-              </ul>
+<!--              <ul-->
+<!--                class="mt-1 text-right list-inline"-->
+<!--                *ngFor="let error of errorMessages.count"-->
+<!--              >-->
+<!--                <li-->
+<!--                  class="-->
+<!--                    font-small-->
+<!--                    text-danger-->
+<!--                    font-title-bold-->
+<!--                    list-inline-item-->
+<!--                  "-->
+<!--                  *ngIf="-->
+<!--                    form.get('count').hasError(error.type) &&-->
+<!--                    (form.get('count').dirty || form.get('count').touched)-->
+<!--                  "-->
+<!--                >-->
+<!--                  {{ error.message }}-->
+<!--                </li>-->
+<!--              </ul>-->
             </div>
           </div>
           <div class="form-group text-right">
@@ -226,32 +226,31 @@
                   id="commentText"
                   formControlName="commentText"
                 ></textarea>
-                <ul
-                  class="mt-1 text-right list-inline"
-                  *ngFor="let error of commentErrorMessages.commentText"
-                >
-                  <li
-                    class="
-                      font-small
-                      text-danger
-                      font-title-bold
-                      list-inline-item
-                    "
-                    *ngIf="
-                      formComment.get('commentText').hasError(error.type) &&
-                      (formComment.get('commentText').dirty ||
-                        formComment.get('commentText').touched)
-                    "
-                  >
-                    {{ error.message }}
-                  </li>
-                </ul>
+<!--                <ul-->
+<!--                  class="mt-1 text-right list-inline"-->
+<!--                  *ngFor="let error of commentErrorMessages.commentText"-->
+<!--                >-->
+<!--                  <li-->
+<!--                    class="-->
+<!--                      font-small-->
+<!--                      text-danger-->
+<!--                      font-title-bold-->
+<!--                      list-inline-item-->
+<!--                    "-->
+<!--                    *ngIf="-->
+<!--                      formComment.get('commentText').hasError(error.type) &&-->
+<!--                      (formComment.get('commentText').dirty ||-->
+<!--                        formComment.get('commentText').touched)-->
+<!--                    "-->
+<!--                  >-->
+<!--                    {{ error.message }}-->
+<!--                  </li>-->
+<!--                </ul>-->
 
                 <button
                   type="submit"
                   class="btn mx-auto d-block mt-2 text-white add-to-cart"
                   (click)="registerComment()"
-                  [disabled]="formComment.invalid"
                 >
                   ثبت دیدگاه
                 </button>
