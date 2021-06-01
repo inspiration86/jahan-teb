@@ -1,6 +1,7 @@
 import { LayoutService } from './../../layout/layout.service';
 import { Component, OnInit } from '@angular/core';
 import {LocalStorageService} from '../../Auth/localStorageLogin/local-storage.service';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -13,6 +14,7 @@ export class FooterComponent implements OnInit {
   displayBasic: boolean;
 
   constructor(private service: LayoutService,
+    private router: Router,
     public localStorage: LocalStorageService) {}
 
     ngOnInit(): void {
@@ -23,5 +25,11 @@ export class FooterComponent implements OnInit {
       }
     });
 
+  }
+
+  goProduct(categoryId: any, subCategoryId: any): any {
+    this.router.navigateByUrl(
+      '/products/' + categoryId + '/' + subCategoryId
+    );
   }
 }
