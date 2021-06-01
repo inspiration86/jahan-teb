@@ -105,7 +105,7 @@ export class HeaderComponent implements OnInit {
       {
         label: 'کاتالوگ',
         icon: 'pi pi-fw pi-image',
-        command: (event) => this.route.navigate(['/news']),
+        command: (event) =>{ document.location.href=this.pathCatalog;},
       },
       {
         label: 'درباره ما',
