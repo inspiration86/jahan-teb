@@ -10,12 +10,14 @@ export class AppComponent implements OnInit{
   title = 'جهان خرم طب';
   constructor(private spinner: NgxSpinnerService) {}
   ngOnInit() {
-    this.spinner.show().then(r =>console.log(r) );
+    // this.spinner.show().then(r =>console.log(r) );
 
     setTimeout(() => {
       /** spinner ends after 3 seconds */
-      // this.spinner.hide().then(r =>console.log(r) );
-    }, 7000);
+      this.spinner.hide();
+    }, 1000);
   }
-  ngAfterViewInit(): void { this.spinner.show(); }
+  ngAfterViewInit(): void {
+    this.spinner.show();
+  }
 }

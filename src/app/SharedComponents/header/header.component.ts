@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.spinner.show();
+    // this.spinner.show();
     this.getCatalog();
     this.service.getAllCategory().subscribe((response) => {
       if (response.success === true) {
